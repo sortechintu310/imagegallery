@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    height: 20vh;
+    margin-bottom: 10px;
+}
+.images{
+    width: 80vw;
+    margin: auto;
+}

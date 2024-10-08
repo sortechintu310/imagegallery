@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="bg-amber-100">
+        <form action="/search" method="post" class="flex flex-col items-center gap-2 p-6">
+            <h1 class="text-4xl font-bold text-amber-950">PhotoGallery</h1>
+            <div class="searchbox">
+                <input type="text" name="query" class="py-2 px-6 border border-2 border-offset-2 border-amber-800 rounded-md text-lg text-amber-950 font-bold">
+                <button type="submit" class="px-6 py-2 bg-amber-600 text-white font-bold text-lg  rounded-md hover:scale-110 transition-transform">Search</button>
+            </div>
+        </form>
+        <div class="images grid grid-rows-<%Math.ceil(data.results.length/4)%> grid-cols-4 place-items-center gap-1 border border-1 border-amber-200 rounded-md bg-white dropshadow-lg p-6 gap-[20px]">
+            <% data.results.forEach(result => {%>
+                    <img src="<%=result.diffrentSizes[1]%>" alt="" class="rounded-md cursor-pointer hover:scale-110 transition-transform">
+            <%}); %>
+        </div>
+
+        <div class="h-[10vh] text-lg font-bold text-center flex items-center justify-center">
+            @Sortechintu230
+        </div>
+    </main>
+</body>
+</html>
